@@ -1,0 +1,2951 @@
+/* =========================================================
+   VARIABLES DELL / SISTEMA VISUAL
+========================================================= */
+
+:root {
+
+  --dell-blue: #0672ce;
+  --dell-blue-dark: #00447c;
+  --dell-blue-deep: #002b49;
+  --dell-blue-soft: #d9f0ff;
+
+  --dell-black: #111111;
+  --dell-dark: #0a1824;
+  --dell-dark-2: #102638;
+
+  --dell-gray: #6e6e6e;
+  --dell-gray-light: #f5f6f7;
+  --dell-border: #d9dde1;
+
+  --white: #ffffff;
+
+  --whatsapp: #25d366;
+
+  --radius: 18px;
+
+  --container: 1180px;
+
+  --shadow:
+    0 20px 50px rgba(0, 43, 73, .08);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  margin: 0;
+
+  font-family:
+    "Inter",
+    Arial,
+    sans-serif;
+
+  color: var(--dell-black);
+
+  background:
+    var(--white);
+
+  overflow-x: hidden;
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+
+  width: min(
+    calc(100% - 48px),
+    var(--container)
+  );
+
+  margin-inline: auto;
+
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  height: 76px;
+
+  background:
+    rgba(255,255,255,.96);
+
+  backdrop-filter:
+    blur(14px);
+
+  border-bottom:
+    1px solid rgba(0,0,0,.08);
+
+  z-index: 1000;
+
+  transition:
+    box-shadow .3s ease,
+    background .3s ease;
+
+}
+
+.navbar.scrolled {
+
+  box-shadow:
+    0 8px 30px rgba(0,0,0,.08);
+
+}
+
+
+.nav-container {
+
+  width: min(
+    calc(100% - 48px),
+    1280px
+  );
+
+  height: 100%;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+}
+
+
+.brand {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+}
+
+
+.brand-avatar {
+
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+
+  place-items: center;
+
+  background:
+    var(--dell-blue);
+
+  color:
+    white;
+
+  border-radius:
+    9px;
+
+  font-size:
+    13px;
+
+  font-weight:
+    800;
+
+}
+
+
+.brand-info {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 2px;
+
+}
+
+
+.brand-info strong {
+
+  font-size:
+    13px;
+
+  font-weight:
+    800;
+
+}
+
+
+.brand-info span {
+
+  font-size:
+    7px;
+
+  letter-spacing:
+    .08em;
+
+  color:
+    #78828b;
+
+  font-weight:
+    700;
+
+}
+
+
+.desktop-nav {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 27px;
+
+}
+
+
+.desktop-nav > a {
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+  color:
+    #606a73;
+
+  transition:
+    color .2s ease;
+
+}
+
+
+.desktop-nav > a:hover {
+
+  color:
+    var(--dell-blue);
+
+}
+
+
+.nav-button {
+
+  background:
+    var(--dell-blue);
+
+  color:
+    white !important;
+
+  padding:
+    11px 18px;
+
+  border-radius:
+    8px;
+
+}
+
+
+.mobile-menu-button {
+
+  display: none;
+
+  border: 0;
+
+  background: none;
+
+  font-size: 22px;
+
+}
+
+
+/* =========================================================
+   MOBILE MENU
+========================================================= */
+
+.mobile-menu {
+
+  position: fixed;
+
+  inset: 0;
+
+  background:
+    var(--dell-dark);
+
+  z-index: 2000;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 28px;
+
+  transform:
+    translateX(100%);
+
+  transition:
+    transform .4s ease;
+
+}
+
+
+.mobile-menu.open {
+
+  transform:
+    translateX(0);
+
+}
+
+
+.mobile-menu a {
+
+  color:
+    white;
+
+  font-size:
+    24px;
+
+  font-weight:
+    700;
+
+}
+
+
+.mobile-close {
+
+  position: absolute;
+
+  top: 25px;
+  right: 25px;
+
+  border: 0;
+
+  background: none;
+
+  color: white;
+
+  font-size: 26px;
+
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+.whatsapp-float {
+
+  position: fixed;
+
+  right: 24px;
+  bottom: 24px;
+
+  width: 62px;
+  height: 62px;
+
+  border-radius: 50%;
+
+  background:
+    var(--whatsapp);
+
+  color:
+    white;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,.22);
+
+  z-index: 1500;
+
+  transition:
+    transform .25s ease;
+
+}
+
+
+.whatsapp-float:hover {
+
+  transform:
+    scale(1.08);
+
+}
+
+
+.whatsapp-float span {
+
+  position: absolute;
+
+  right: 72px;
+
+  white-space: nowrap;
+
+  background:
+    white;
+
+  color:
+    #222;
+
+  padding:
+    9px 14px;
+
+  border-radius:
+    8px;
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+  box-shadow:
+    0 5px 20px rgba(0,0,0,.12);
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+  min-height:
+    760px;
+
+  position:
+    relative;
+
+  overflow:
+    hidden;
+
+  background:
+    #071927;
+
+  color:
+    white;
+
+  padding-top:
+    76px;
+
+}
+
+
+.hero-background {
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(6,114,206,.35),
+      transparent 30%
+    ),
+
+    radial-gradient(
+      circle at 15% 80%,
+      rgba(0,68,124,.4),
+      transparent 35%
+    );
+
+}
+
+
+.hero-background::after {
+
+  content:
+    "";
+
+  position:
+    absolute;
+
+  inset:
+    0;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(7,25,39,.98) 0%,
+      rgba(7,25,39,.90) 45%,
+      rgba(7,25,39,.72) 100%
+    );
+
+}
+
+
+.hero-container {
+
+  position:
+    relative;
+
+  z-index:
+    2;
+
+  width:
+    min(
+      calc(100% - 48px),
+      1080px
+    );
+
+  min-height:
+    684px;
+
+  margin:
+    auto;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+}
+
+
+.hero-top-label {
+
+  position:
+    absolute;
+
+  top:
+    36px;
+
+  right:
+    0;
+
+  color:
+    #7f98ad;
+
+  font-size:
+    9px;
+
+  letter-spacing:
+    .13em;
+
+}
+
+
+.hero-logos {
+
+  position:
+    absolute;
+
+  top:
+    25px;
+
+  left:
+    0;
+
+  right:
+    0;
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+}
+
+
+.hero-logo {
+
+  min-width:
+    90px;
+
+  height:
+    50px;
+
+  padding:
+    10px 15px;
+
+  border-radius:
+    9px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  font-weight:
+    800;
+
+}
+
+
+.hero-logo small {
+
+  font-size:
+    7px;
+
+  letter-spacing:
+    .04em;
+
+}
+
+
+.hero-logo.ingram {
+
+  background:
+    #70be00;
+
+}
+
+
+.hero-logo.dell {
+
+  background:
+    var(--dell-blue);
+
+}
+
+
+.hero-content {
+
+  max-width:
+    800px;
+
+  padding-top:
+    50px;
+
+}
+
+
+.eyebrow {
+
+  display:
+    block;
+
+  color:
+    #58b6f4;
+
+  font-size:
+    10px;
+
+  letter-spacing:
+    .14em;
+
+  font-weight:
+    800;
+
+  margin-bottom:
+    15px;
+
+}
+
+
+.hero h1 {
+
+  font-size:
+    clamp(70px, 10vw, 138px);
+
+  line-height:
+    .82;
+
+  letter-spacing:
+    -.065em;
+
+  margin:
+    0 0 32px;
+
+  font-weight:
+    800;
+
+}
+
+
+.hero-description {
+
+  max-width:
+    650px;
+
+  color:
+    #b8c7d2;
+
+  font-size:
+    17px;
+
+  line-height:
+    1.7;
+
+  margin-bottom:
+    28px;
+
+}
+
+
+.hero-description strong {
+
+  color:
+    white;
+
+}
+
+
+.hero-process {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    9px;
+
+  margin-bottom:
+    45px;
+
+}
+
+
+.hero-process span {
+
+  background:
+    rgba(255,255,255,.09);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  padding:
+    8px 12px;
+
+  border-radius:
+    5px;
+
+  font-size:
+    9px;
+
+  font-weight:
+    700;
+
+}
+
+
+.hero-process i {
+
+  color:
+    var(--dell-blue);
+
+  font-size:
+    10px;
+
+}
+
+
+.hero-person {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+}
+
+
+.person-initial {
+
+  width:
+    43px;
+
+  height:
+    43px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  background:
+    var(--dell-blue);
+
+  border-radius:
+    10px;
+
+  font-weight:
+    800;
+
+}
+
+
+.hero-person div:last-child {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+}
+
+
+.hero-person strong {
+
+  font-size:
+    14px;
+
+}
+
+
+.hero-person span {
+
+  color:
+    #8094a4;
+
+  font-size:
+    9px;
+
+  margin-top:
+    3px;
+
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.section {
+
+  padding:
+    110px 0;
+
+  background:
+    white;
+
+}
+
+
+.dark-section {
+
+  padding:
+    110px 0;
+
+  background:
+    var(--dell-dark);
+
+  color:
+    white;
+
+}
+
+
+.section-label {
+
+  display:
+    inline-block;
+
+  color:
+    var(--dell-blue);
+
+  font-size:
+    10px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .13em;
+
+  margin-bottom:
+    22px;
+
+}
+
+
+.section-label.blue {
+
+  color:
+    #53b8f4;
+
+}
+
+
+.section-heading {
+
+  max-width:
+    780px;
+
+  margin-bottom:
+    55px;
+
+}
+
+
+.section-heading h2,
+.about-grid h2,
+.monitor-copy h2,
+.support-content h2,
+.contact-main h2,
+.faq-header h2 {
+
+  font-size:
+    clamp(42px, 5vw, 68px);
+
+  line-height:
+    .98;
+
+  letter-spacing:
+    -.05em;
+
+  margin:
+    0 0 25px;
+
+  font-weight:
+    800;
+
+}
+
+
+.section-heading h2 span,
+.about-grid h2 span,
+.monitor-copy h2 span,
+.support-content h2 span,
+.contact-main h2 span,
+.faq-header h2 span {
+
+  color:
+    var(--dell-blue);
+
+}
+
+
+.section-heading p {
+
+  color:
+    #6e7780;
+
+  font-size:
+    17px;
+
+  line-height:
+    1.6;
+
+}
+
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    .85fr 1.15fr;
+
+  gap:
+    100px;
+
+  align-items:
+    start;
+
+}
+
+
+.about-copy {
+
+  color:
+    #5f6870;
+
+  line-height:
+    1.75;
+
+  font-size:
+    16px;
+
+}
+
+
+.about-copy strong {
+
+  color:
+    #111;
+
+}
+
+
+.about-tags {
+
+  display:
+    flex;
+
+  flex-wrap:
+    wrap;
+
+  gap:
+    8px;
+
+  margin-top:
+    28px;
+
+}
+
+
+.about-tags span {
+
+  border:
+    1px solid var(--dell-border);
+
+  padding:
+    9px 14px;
+
+  border-radius:
+    50px;
+
+  font-size:
+    11px;
+
+  font-weight:
+    700;
+
+}
+
+
+/* =========================================================
+   VALUE CARDS
+========================================================= */
+
+.value-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    16px;
+
+}
+
+
+.value-card {
+
+  position:
+    relative;
+
+  background:
+    var(--dell-dark-2);
+
+  border:
+    1px solid rgba(255,255,255,.09);
+
+  padding:
+    32px;
+
+  min-height:
+    330px;
+
+  border-radius:
+    14px;
+
+  transition:
+    transform .25s ease,
+    border-color .25s ease;
+
+}
+
+
+.value-card:hover {
+
+  transform:
+    translateY(-7px);
+
+  border-color:
+    var(--dell-blue);
+
+}
+
+
+.value-card i {
+
+  color:
+    #58b6f4;
+
+  font-size:
+    28px;
+
+  margin:
+    40px 0 25px;
+
+}
+
+
+.card-number {
+
+  color:
+    #5d778c;
+
+  font-size:
+    10px;
+
+  font-weight:
+    800;
+
+}
+
+
+.value-card h3 {
+
+  font-size:
+    20px;
+
+  line-height:
+    1.2;
+
+  margin:
+    0 0 14px;
+
+}
+
+
+.value-card p {
+
+  color:
+    #91a2af;
+
+  font-size:
+    13px;
+
+  line-height:
+    1.7;
+
+}
+
+
+/* =========================================================
+   GARANTIAS
+========================================================= */
+
+.guarantee-intro {
+
+  max-width:
+    850px;
+
+  color:
+    #555f67;
+
+  line-height:
+    1.7;
+
+  margin-bottom:
+    45px;
+
+}
+
+
+.guarantee-cards {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+}
+
+
+.guarantee-card {
+
+  min-height:
+    280px;
+
+  padding:
+    40px;
+
+  background:
+    #f4f6f8;
+
+  border-right:
+    1px solid white;
+
+}
+
+
+.guarantee-card.featured {
+
+  background:
+    var(--dell-blue);
+
+  color:
+    white;
+
+}
+
+
+.guarantee-icon {
+
+  font-size:
+    36px;
+
+  font-weight:
+    800;
+
+  color:
+    var(--dell-blue);
+
+  margin-bottom:
+    22px;
+
+}
+
+
+.featured .guarantee-icon {
+
+  color:
+    white;
+
+}
+
+
+.guarantee-card h3 {
+
+  font-size:
+    22px;
+
+  margin:
+    0 0 7px;
+
+}
+
+
+.guarantee-card > span {
+
+  font-size:
+    10px;
+
+  font-weight:
+    800;
+
+  text-transform:
+    uppercase;
+
+  letter-spacing:
+    .08em;
+
+  opacity:
+    .7;
+
+}
+
+
+.guarantee-card p {
+
+  font-size:
+    13px;
+
+  line-height:
+    1.6;
+
+  margin-top:
+    28px;
+
+  opacity:
+    .75;
+
+}
+
+
+.guarantee-cta {
+
+  margin-top:
+    25px;
+
+  background:
+    #d9f0ff;
+
+  padding:
+    28px 35px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  gap:
+    25px;
+
+}
+
+
+.guarantee-cta div {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    5px;
+
+}
+
+
+.guarantee-cta strong {
+
+  color:
+    var(--dell-blue-deep);
+
+  font-size:
+    18px;
+
+}
+
+
+.guarantee-cta span {
+
+  color:
+    #526b7a;
+
+  font-size:
+    13px;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.primary-button,
+.secondary-button {
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  gap:
+    10px;
+
+  padding:
+    13px 20px;
+
+  border-radius:
+    7px;
+
+  font-size:
+    12px;
+
+  font-weight:
+    800;
+
+  transition:
+    transform .2s ease;
+
+}
+
+
+.primary-button {
+
+  background:
+    var(--dell-blue);
+
+  color:
+    white;
+
+}
+
+
+.secondary-button {
+
+  border:
+    1px solid rgba(255,255,255,.2);
+
+  color:
+    white;
+
+}
+
+
+.primary-button:hover,
+.secondary-button:hover {
+
+  transform:
+    translateY(-2px);
+
+}
+
+
+/* =========================================================
+   SUPPORT TABLE
+========================================================= */
+
+.support-table-wrapper {
+
+  overflow-x:
+    auto;
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
+}
+
+
+.support-table {
+
+  width:
+    100%;
+
+  border-collapse:
+    collapse;
+
+  min-width:
+    900px;
+
+  font-size:
+    12px;
+
+}
+
+
+.support-table th {
+
+  padding:
+    18px;
+
+  text-align:
+    left;
+
+  background:
+    #1e3344;
+
+  color:
+    white;
+
+}
+
+
+.support-table th.prosupport-head {
+
+  background:
+    #0a56aa;
+
+}
+
+
+.support-table th.prosupport-plus-head {
+
+  background:
+    #142e67;
+
+}
+
+
+.support-table td {
+
+  padding:
+    16px 18px;
+
+  border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+  color:
+    #aebbc5;
+
+}
+
+
+.support-table td:first-child {
+
+  color:
+    white;
+
+  font-weight:
+    600;
+
+}
+
+
+.support-table tr:hover td {
+
+  background:
+    rgba(6,114,206,.08);
+
+}
+
+
+/* =========================================================
+   MONITORES
+========================================================= */
+
+.monitor-section {
+
+  padding:
+    110px 0;
+
+  background:
+    #f7f8f9;
+
+}
+
+
+.monitor-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    .65fr 1.35fr;
+
+  gap:
+    70px;
+
+  align-items:
+    center;
+
+}
+
+
+.monitor-copy p {
+
+  color:
+    #667078;
+
+  line-height:
+    1.7;
+
+}
+
+
+.monitor-points {
+
+  display:
+    grid;
+
+  gap:
+    8px;
+
+  margin-top:
+    35px;
+
+}
+
+
+.monitor-points div {
+
+  padding:
+    13px;
+
+  border:
+    1px solid var(--dell-border);
+
+  background:
+    white;
+
+  border-radius:
+    6px;
+
+  font-size:
+    11px;
+
+}
+
+
+.monitor-points span {
+
+  color:
+    var(--dell-blue);
+
+  font-weight:
+    800;
+
+  margin-right:
+    12px;
+
+}
+
+
+.monitor-table {
+
+  background:
+    white;
+
+  box-shadow:
+    var(--shadow);
+
+}
+
+
+.monitor-table-head,
+.monitor-row {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1.1fr 1fr 1fr;
+
+}
+
+
+.monitor-table-head {
+
+  background:
+    #1d2e3d;
+
+  color:
+    white;
+
+  font-weight:
+    700;
+
+}
+
+
+.monitor-table-head span,
+.monitor-row span {
+
+  padding:
+    15px;
+
+}
+
+
+.monitor-row {
+
+  border-bottom:
+    1px solid #e7eaed;
+
+  font-size:
+    11px;
+
+}
+
+
+.monitor-row span:first-child {
+
+  font-weight:
+    700;
+
+}
+
+
+/* =========================================================
+   COMMERCIAL
+========================================================= */
+
+.commercial-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap:
+    14px;
+
+}
+
+
+.commercial-card {
+
+  border:
+    1px solid var(--dell-border);
+
+  padding:
+    32px 25px;
+
+  min-height:
+    290px;
+
+  border-radius:
+    12px;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+
+}
+
+
+.commercial-card:hover {
+
+  transform:
+    translateY(-5px);
+
+  box-shadow:
+    var(--shadow);
+
+}
+
+
+.commercial-icon {
+
+  width:
+    42px;
+
+  height:
+    42px;
+
+  border-radius:
+    8px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  background:
+    #e7f4ff;
+
+  color:
+    var(--dell-blue);
+
+  margin-bottom:
+    25px;
+
+}
+
+
+.commercial-card > span {
+
+  color:
+    var(--dell-blue);
+
+  font-size:
+    8px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .1em;
+
+}
+
+
+.commercial-card h3 {
+
+  font-size:
+    20px;
+
+  margin:
+    15px 0;
+
+}
+
+
+.commercial-card p {
+
+  color:
+    #68727a;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.7;
+
+}
+
+
+.commercial-card a {
+
+  color:
+    var(--dell-blue);
+
+  font-size:
+    10px;
+
+  font-weight:
+    800;
+
+}
+
+
+/* =========================================================
+   DELL SUPPORT
+========================================================= */
+
+.support-section {
+
+  padding:
+    80px 0;
+
+  background:
+    white;
+
+}
+
+
+.support-box {
+
+  background:
+    var(--dell-dark);
+
+  color:
+    white;
+
+  border-radius:
+    18px;
+
+  padding:
+    60px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1.2fr .8fr;
+
+  gap:
+    70px;
+
+}
+
+
+.support-content h2 {
+
+  max-width:
+    650px;
+
+}
+
+
+.support-content p {
+
+  color:
+    #9baebc;
+
+  max-width:
+    650px;
+
+  line-height:
+    1.7;
+
+}
+
+
+.support-actions {
+
+  display:
+    flex;
+
+  gap:
+    10px;
+
+  margin-top:
+    30px;
+
+  flex-wrap:
+    wrap;
+
+}
+
+
+.support-features {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(2,1fr);
+
+  gap:
+    12px;
+
+}
+
+
+.support-features div {
+
+  background:
+    rgba(255,255,255,.06);
+
+  border:
+    1px solid rgba(255,255,255,.08);
+
+  border-radius:
+    10px;
+
+  padding:
+    25px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  gap:
+    8px;
+
+}
+
+
+.support-features i {
+
+  color:
+    #58b6f4;
+
+  font-size:
+    22px;
+
+}
+
+
+.support-features strong {
+
+  font-size:
+    13px;
+
+}
+
+
+.support-features span {
+
+  color:
+    #8194a2;
+
+  font-size:
+    9px;
+
+}
+
+
+/* =========================================================
+   VIDEOS
+========================================================= */
+
+.videos-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    22px;
+
+}
+
+
+.video-card {
+
+  border:
+    1px solid var(--dell-border);
+
+  border-radius:
+    12px;
+
+  overflow:
+    hidden;
+
+  background:
+    white;
+
+}
+
+
+.video-wrapper {
+
+  position:
+    relative;
+
+  padding-bottom:
+    56.25%;
+
+  height:
+    0;
+
+}
+
+
+.video-wrapper iframe {
+
+  position:
+    absolute;
+
+  width:
+    100%;
+
+  height:
+    100%;
+
+  left:
+    0;
+
+  top:
+    0;
+
+}
+
+
+.video-info {
+
+  padding:
+    25px;
+
+}
+
+
+.video-info span {
+
+  color:
+    var(--dell-blue);
+
+  font-size:
+    8px;
+
+  font-weight:
+    800;
+
+  letter-spacing:
+    .1em;
+
+}
+
+
+.video-info h3 {
+
+  font-size:
+    19px;
+
+  line-height:
+    1.3;
+
+}
+
+
+.video-info p {
+
+  color:
+    #69737a;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.6;
+
+}
+
+
+.video-placeholder {
+
+  min-height:
+    100%;
+
+  background:
+    linear-gradient(
+      135deg,
+      #071927,
+      #0e3653
+    );
+
+  color:
+    white;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+}
+
+
+.video-placeholder-content {
+
+  text-align:
+    center;
+
+  max-width:
+    300px;
+
+}
+
+
+.video-placeholder-content i {
+
+  font-size:
+    55px;
+
+  color:
+    #ff0033;
+
+  margin-bottom:
+    20px;
+
+}
+
+
+.video-placeholder-content strong {
+
+  display:
+    block;
+
+  font-size:
+    20px;
+
+}
+
+
+.video-placeholder-content p {
+
+  color:
+    #91a7b7;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.6;
+
+}
+
+
+/* =========================================================
+   FAQ
+========================================================= */
+
+.faq-section {
+
+  background:
+    #071927;
+
+}
+
+
+.faq-header {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1.1fr .9fr;
+
+  gap:
+    80px;
+
+  align-items:
+    end;
+
+  margin-bottom:
+    50px;
+
+}
+
+
+.faq-header p {
+
+  color:
+    #8ea2b1;
+
+  line-height:
+    1.7;
+
+}
+
+
+.faq-list {
+
+  max-width:
+    900px;
+
+}
+
+
+.faq-item {
+
+  border-bottom:
+    1px solid rgba(255,255,255,.12);
+
+}
+
+
+.faq-question {
+
+  width:
+    100%;
+
+  padding:
+    23px 0;
+
+  border:
+    0;
+
+  background:
+    none;
+
+  color:
+    white;
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  align-items:
+    center;
+
+  text-align:
+    left;
+
+  cursor:
+    pointer;
+
+  font-size:
+    14px;
+
+  font-weight:
+    700;
+
+}
+
+
+.faq-question i {
+
+  color:
+    #58b6f4;
+
+  transition:
+    transform .25s ease;
+
+}
+
+
+.faq-item.active
+.faq-question i {
+
+  transform:
+    rotate(45deg);
+
+}
+
+
+.faq-answer {
+
+  max-height:
+    0;
+
+  overflow:
+    hidden;
+
+  transition:
+    max-height .35s ease;
+
+}
+
+
+.faq-answer p {
+
+  color:
+    #94a7b4;
+
+  font-size:
+    12px;
+
+  line-height:
+    1.7;
+
+  padding:
+    0 40px 25px 0;
+
+}
+
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-section {
+
+  padding:
+    100px 0;
+
+  background:
+    #f5f7f8;
+
+}
+
+
+.contact-box {
+
+  background:
+    white;
+
+  border:
+    1px solid var(--dell-border);
+
+  border-radius:
+    15px;
+
+  padding:
+    55px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1fr .8fr;
+
+  gap:
+    70px;
+
+  box-shadow:
+    var(--shadow);
+
+}
+
+
+.contact-main p {
+
+  color:
+    #68737b;
+
+  line-height:
+    1.7;
+
+  max-width:
+    550px;
+
+}
+
+
+.contact-details {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    center;
+
+  gap:
+    15px;
+
+}
+
+
+.contact-details > a {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    15px;
+
+  padding:
+    18px;
+
+  border:
+    1px solid var(--dell-border);
+
+  border-radius:
+    10px;
+
+}
+
+
+.contact-icon {
+
+  width:
+    44px;
+
+  height:
+    44px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    9px;
+
+  font-size:
+    20px;
+
+}
+
+
+.contact-icon.whatsapp {
+
+  background:
+    #e3faed;
+
+  color:
+    var(--whatsapp);
+
+}
+
+
+.contact-icon.email {
+
+  background:
+    #e5f3ff;
+
+  color:
+    var(--dell-blue);
+
+}
+
+
+.contact-details small {
+
+  display:
+    block;
+
+  color:
+    #7d858b;
+
+  font-size:
+    9px;
+
+}
+
+
+.contact-details strong {
+
+  display:
+    block;
+
+  margin-top:
+    4px;
+
+  font-size:
+    13px;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+
+  background:
+    #07131e;
+
+  color:
+    white;
+
+  padding:
+    65px 0 25px;
+
+}
+
+
+.footer-grid {
+
+  display:
+    grid;
+
+  grid-template-columns:
+    1.4fr repeat(3, 1fr);
+
+  gap:
+    50px;
+
+}
+
+
+.footer-brand {
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+}
+
+
+.footer-avatar {
+
+  width:
+    40px;
+
+  height:
+    40px;
+
+  display:
+    grid;
+
+  place-items:
+    center;
+
+  border-radius:
+    9px;
+
+  background:
+    var(--dell-blue);
+
+  font-size:
+    12px;
+
+  font-weight:
+    800;
+
+}
+
+
+.footer-brand div:last-child {
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+}
+
+
+.footer-brand span {
+
+  color:
+    #718697;
+
+  font-size:
+    8px;
+
+  margin-top:
+    4px;
+
+}
+
+
+footer p {
+
+  color:
+    #718697;
+
+  font-size:
+    11px;
+
+}
+
+
+footer h4 {
+
+  font-size:
+    11px;
+
+  margin:
+    0 0 18px;
+
+}
+
+
+footer a {
+
+  display:
+    block;
+
+  color:
+    #7e919f;
+
+  font-size:
+    10px;
+
+  margin-bottom:
+    10px;
+
+}
+
+
+footer a:hover {
+
+  color:
+    #58b6f4;
+
+}
+
+
+.footer-bottom {
+
+  width:
+    min(
+      calc(100% - 48px),
+      var(--container)
+    );
+
+  margin:
+    55px auto 0;
+
+  padding-top:
+    20px;
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
+
+  display:
+    flex;
+
+  justify-content:
+    space-between;
+
+  color:
+    #526572;
+
+  font-size:
+    9px;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .desktop-nav {
+
+    gap:
+      15px;
+
+  }
+
+  .value-grid,
+  .commercial-grid {
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+}
+
+
+@media (max-width: 850px) {
+
+  .desktop-nav {
+
+    display:
+      none;
+
+  }
+
+  .mobile-menu-button {
+
+    display:
+      block;
+
+  }
+
+  .hero {
+
+    min-height:
+      720px;
+
+  }
+
+  .hero-container {
+
+    align-items:
+      center;
+
+  }
+
+  .hero h1 {
+
+    font-size:
+      clamp(65px, 16vw, 110px);
+
+  }
+
+  .about-grid,
+  .monitor-grid,
+  .support-box,
+  .contact-box,
+  .faq-header {
+
+    grid-template-columns:
+      1fr;
+
+    gap:
+      40px;
+
+  }
+
+  .guarantee-cards {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+  .guarantee-card {
+
+    border-right:
+      0;
+
+    border-bottom:
+      1px solid white;
+
+  }
+
+  .support-features {
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+  .videos-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+  .footer-grid {
+
+    grid-template-columns:
+      repeat(2,1fr);
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .container,
+  .nav-container,
+  .footer-bottom {
+
+    width:
+      min(
+        calc(100% - 32px),
+        var(--container)
+      );
+
+  }
+
+  .hero-logos {
+
+    top:
+      20px;
+
+  }
+
+  .hero-logo {
+
+    min-width:
+      75px;
+
+    height:
+      43px;
+
+    font-size:
+      11px;
+
+  }
+
+  .hero-content {
+
+    padding-top:
+      70px;
+
+  }
+
+  .hero-description {
+
+    font-size:
+      14px;
+
+  }
+
+  .hero-process {
+
+    gap:
+      5px;
+
+  }
+
+  .hero-process i {
+
+    display:
+      none;
+
+  }
+
+  .hero-process span {
+
+    font-size:
+      8px;
+
+  }
+
+  .section,
+  .dark-section,
+  .monitor-section {
+
+    padding:
+      75px 0;
+
+  }
+
+  .value-grid,
+  .commercial-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+  .value-card {
+
+    min-height:
+      auto;
+
+  }
+
+  .guarantee-cta {
+
+    flex-direction:
+      column;
+
+    align-items:
+      flex-start;
+
+  }
+
+  .support-box,
+  .contact-box {
+
+    padding:
+      30px;
+
+  }
+
+  .support-features {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+  .monitor-table {
+
+    overflow-x:
+      auto;
+
+  }
+
+  .monitor-table-head,
+  .monitor-row {
+
+    min-width:
+      600px;
+
+  }
+
+  .footer-grid {
+
+    grid-template-columns:
+      1fr;
+
+  }
+
+  .footer-bottom {
+
+    flex-direction:
+      column;
+
+    gap:
+      10px;
+
+  }
+
+  .whatsapp-float span {
+
+    display:
+      none;
+
+  }
+
+}
